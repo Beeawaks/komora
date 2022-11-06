@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\pertanyaanPostController;
+use App\Models\pertanyaanPost;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,17 +16,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('landingPage');
+    return view('landingPage', [
+        "title" => "Siap, Semangat, Dahysat!"
+    ]);
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get('/home', [pertanyaanPostController::class, 'index']);
+Route::get('home/{slug}', [pertanyaanPostController::class, 'show']);
 
 Route::get('/course', function () {
-    return view('course');
+    return view('course', [
+        "title" => "Course"
+    ]);
 });
 
 Route::get('/bulletin', function () {
-    return view('bulletin');
+    return view('bulletin', [
+        "title" => "Bulletin"
+    ]);
 });
