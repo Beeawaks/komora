@@ -15,11 +15,11 @@ class pertanyaanPostController extends Controller
         ]);
     }
 
-    public function show($slug)
+    public function show(pertanyaanPost $pertanyaanPost)
     {
         return view('post', [
             "title" => "Single Post",
-            "post" => pertanyaanPost::find($slug)
+            "post" => $pertanyaanPost
         ]);
     }
 }

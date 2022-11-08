@@ -5,10 +5,10 @@
     @foreach ($pertanyaan as $pertanyaanSatuan)
         <article class="mb-5">
             <h2>
-                <a href="/home/{{ $pertanyaanSatuan->id }}">{{ $pertanyaanSatuan->title }}</a>
+                <a href="/home/{{ $pertanyaanSatuan->slug }}">{{ $pertanyaanSatuan->title }}</a>
             </h2>
             {{-- <h5>Ditanya oleh {{ $pertanyaanSatuan["author"] }}</h5> --}}
-            <p>{{ $pertanyaanSatuan->body }}</p>
+            <p>{{ $pertanyaanSatuan->excerpt}}</p>
         </article>
     @endforeach
 

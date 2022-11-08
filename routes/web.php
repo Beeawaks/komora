@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [pertanyaanPostController::class, 'index']);
-Route::get('home/{slug}', [pertanyaanPostController::class, 'show']);
+Route::get('home/{pertanyaanPost:slug}', [pertanyaanPostController::class, 'show']);
 
 Route::get('/course', function () {
     return view('course', [
