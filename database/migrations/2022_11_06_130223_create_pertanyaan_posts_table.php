@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pertanyaan_posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('categoryPertanyaan_id');
+            $table->foreignId('category_id');
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('excerpt');

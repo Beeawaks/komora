@@ -12,8 +12,7 @@ class pertanyaanPost extends Model
     //protected $fillable = ['title', 'slug', 'excerpt', 'body'];
     protected $guarded = ['id'];
 
-    public function categoryPertanyaan()
-    {
-        return $this->belongsTo(categoryPertanyaan::class);
+    public function category(){
+        return $this->belongsTo(Category::class);
     }
 }

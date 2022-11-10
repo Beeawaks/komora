@@ -2,7 +2,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem natus esse suscipit
 
 pertanyaanPost::create([
     'title' => 'Judul Pertama',
-    'categoryPertanyaan_id'=> '1',
+    'category_id'=> '1',
     'slug' => 'judul-pertama',
     'excerpt' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem natus esse suscipit illum dolore eum ratione quam harum laboriosam temporibus perferendis, veritatis nulla quaerat voluptatibus, sint officiis dolorum doloribus voluptates dolorem earum? Temporibus dolor incidunt officiis praesentium pariatur magni quasi eos dolore! Eum, debitis molestias! Totam quia iure fuga reprehenderit dolor earum vitae consequatur libero nesciunt, sequi enim ipsum quidem accusamus qui est. Voluptatibus ipsam esse tempore, temporibus ratione itaque molestiae ullam officia atque nulla deserunt minima laboriosam, ipsa beatae magni dignissimos facilis saepe. Iure officiis quam id ab reiciendis natus omnis. Velit quasi aliquam dicta sunt fuga soluta nam?'
@@ -10,7 +10,7 @@ pertanyaanPost::create([
 
 pertanyaanPost::create([
     'title' => 'Judul Kedua',
-    'categoryPertanyaan_id'=> '2',
+    'category_id'=> '2',
     'slug' => 'judul-kedua',
     'excerpt' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem natus esse suscipit illum dolore eum ratione quam harum laboriosam temporibus perferendis, veritatis nulla quaerat voluptatibus, sint officiis dolorum doloribus voluptates dolorem earum? Temporibus dolor incidunt officiis praesentium pariatur magni quasi eos dolore! Eum, debitis molestias! Totam quia iure fuga reprehenderit dolor earum vitae consequatur libero nesciunt, sequi enim ipsum quidem accusamus qui est. Voluptatibus ipsam esse tempore, temporibus ratione itaque molestiae ullam officia atque nulla deserunt minima laboriosam, ipsa beatae magni dignissimos facilis saepe. Iure officiis quam id ab reiciendis natus omnis. Velit quasi aliquam dicta sunt fuga soluta nam?'
@@ -25,17 +25,17 @@ pertanyaanPost::create([
 ])
 
 
-categoryPertanyaan::create([
+Category::create([
     'name' => 'Kuliah',
     'slug' => 'kuliah',
 ])
 
-categoryPertanyaan::create([
+Category::create([
     'name' => 'Tugas',
     'slug' => 'tugas',
 ])
 
-categoryPertanyaan::create([
-    'name' => 'Di Luar Kuliah',
-    'slug' => 'di-luar-kuliah',
+Category::create([
+    'name' => 'NonKuliah',
+    'slug' => 'nonkuliah',
 ])

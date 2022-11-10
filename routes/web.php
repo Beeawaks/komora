@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\pertanyaanPostController;
+use App\Models\Category;
 use App\Models\pertanyaanPost;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Route as RoutingRoute;
+use App\Http\Controllers\pertanyaanPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +24,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [pertanyaanPostController::class, 'index']);
-Route::get('home/{pertanyaanPost:slug}', [pertanyaanPostController::class, 'show']);
+Route::get('/home/{pertanyaanPost:slug}', [pertanyaanPostController::class, 'show']);
 
 Route::get('/course', function () {
     return view('course', [
@@ -33,5 +35,13 @@ Route::get('/course', function () {
 Route::get('/bulletin', function () {
     return view('bulletin', [
         "title" => "Bulletin"
+    ]);
+});
+
+Route::get('/categories/{category:slug}', function(Category $category){
+    return view('category', [
+        'title' => $category->name,
+        'posts' => $category->posts,
+        'category' => $category->name
     ]);
 });
