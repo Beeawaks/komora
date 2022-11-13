@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use App\Models\Category;
 use App\Models\pertanyaanPost;
 use Illuminate\Support\Facades\Route;
@@ -17,31 +18,49 @@ use App\Http\Controllers\pertanyaanPostController;
 |
 */
 
-Route::get('/', function () {
-    return view('landingPage', [
-        "title" => "Siap, Semangat, Dahysat!"
-    ]);
-});
+// Route::get('/', function () {
+//     return view('landingPage', [
+//         "title" => "Siap, Semangat, Dahysat!"
+//     ]);
+// });
+Route::get('/', [pertanyaanPostController::class, 'index']);
 
 Route::get('/home', [pertanyaanPostController::class, 'index']);
 Route::get('/home/{pertanyaanPost:slug}', [pertanyaanPostController::class, 'show']);
 
 Route::get('/course', function () {
     return view('course', [
-        "title" => "Course"
+        "title" => "Course",
+        'active' => 'course'
     ]);
 });
 
 Route::get('/bulletin', function () {
     return view('bulletin', [
-        "title" => "Bulletin"
+        "title" => "Bulletin",
+        'active' => 'bulletin'
+    ]);
+});
+
+Route::get('/categories', function(){
+    return view('categories', [
+        'title' => 'Post Categories',
+        'active' => 'categories',
+        'categories' => Category::all()
     ]);
 });
 
 Route::get('/categories/{category:slug}', function(Category $category){
-    return view('category', [
-        'title' => $category->name,
-        'posts' => $category->posts,
-        'category' => $category->name
+    return view('home', [
+        'title' => "Post By Category : $category->name",
+        'active' => 'categories',
+        'posts' => $category->posts->load('category', 'author'),
+    ]);
+});
+
+Route::get('/authors/{author:username}', function(User $author){
+    return view('home', [
+        'title' => "Post By Author : $author->name",
+        'posts' => $author->posts->load('category', 'author')
     ]);
 });

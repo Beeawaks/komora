@@ -1,12 +1,9 @@
+
+
 @extends('layouts.main')
-@section('container')
-<h1>Bulletin</h1>
-@endsection
-
-{{-- @extends('layouts.main')
 
 @section('container')
-    <h1 class="mb-5">Bulletin</h1>
+    <h1 class="mb-5">Post Categories</h1>
 
     <div class="container">
         <div class="row">
@@ -24,4 +21,4 @@
             @endforeach
         </div>
     </div>
-@endsection --}}
+@endsection

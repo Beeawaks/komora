@@ -10,8 +10,10 @@ class pertanyaanPostController extends Controller
     public function index()
     {
         return view('home', [
-            "title" => "Home",
-            "pertanyaan" => pertanyaanPost::all()
+            "title" => "All Posts",
+            "active" => "home",
+            //"posts" => pertanyaanPost::all()
+            "posts" => pertanyaanPost::latest()->get()
         ]);
     }
 
@@ -19,6 +21,7 @@ class pertanyaanPostController extends Controller
     {
         return view('post', [
             "title" => "Single Post",
+            "active" => "home",
             "post" => $pertanyaanPost
         ]);
     }
