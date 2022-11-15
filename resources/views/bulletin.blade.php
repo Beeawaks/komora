@@ -1,27 +1,40 @@
-@extends('layouts.main')
+{{-- @extends('layouts.main')
 @section('container')
 <h1>Bulletin</h1>
-@endsection
+@endsection --}}
 
-{{-- @extends('layouts.main')
+@extends('layouts.main')
 
 @section('container')
-    <h1 class="mb-5">Bulletin</h1>
+    <h1 class="mb-5">{{ $title }}</h1>
 
+    @if ($posts->count())
     <div class="container">
         <div class="row">
-            @foreach ($categories as $category)
-                <div class="col-md-4">
-                    <a href="/categories/{{ $category->slug }}">
-                        <div class="card bg-dark text-white">
-                            <img src="https://source.unsplash.com/500x500?{{ $category->name }}" class="card-img" alt="{{ $category->name }}">
-                            <div class="card-img-overlay d-flex align-items-center p-0">
-                                <h5 class="card-title text-center flex-fill p-4 fs-3" style="background-color: rgba(0,0,0,0.7)">{{ $category->name }}</h5>
-                            </div>
+            @foreach ($posts as $post)
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        {{-- <div class="positon-absolute px-3 py-2"> <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none text-dark">{{ $post->category->name }}</a> </div> --}}
+                        {{-- <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}"> --}}
+                        <div class="card-body">
+                        <h5 class="card-title"><a href="/bulletin/{{ $post->slug }}" class="text-decoration-none text-dark">{{ $post->title }}</a></h5>
+                        <p>
+                            <small class="text-muted">
+                                By. <a href="/authors/{{ $post->author->username }}"class = "text-decoration-none">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }}
+                            </small>
+                        </p>
+                        <p class="card-text">{{ $post->excerpt }}</p>
+                        <a href="/bulletin/{{ $post->slug }}" class="btn btn-primary">Read More</a>
                         </div>
-                    </a>
+                    </div>  
                 </div>
             @endforeach
         </div>
     </div>
-@endsection --}}
+        
+    @else
+       <p class="text-center fs-4">No post found</p> 
+    @endif
+    
+    
+@endsection

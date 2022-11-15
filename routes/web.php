@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BulletinController;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\pertanyaanPost;
@@ -35,12 +36,14 @@ Route::get('/course', function () {
     ]);
 });
 
-Route::get('/bulletin', function () {
-    return view('bulletin', [
-        "title" => "Bulletin",
-        'active' => 'bulletin'
-    ]);
-});
+Route::get('/bulletin', [BulletinController::class, 'index']);
+
+// Route::get('/bulletin', function () {
+//     return view('bulletin', [
+//         "title" => "Bulletin",
+//         'active' => 'bulletin'
+//     ]);
+// });
 
 Route::get('/categories', function(){
     return view('categories', [
