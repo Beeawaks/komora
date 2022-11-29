@@ -42,6 +42,10 @@ Pengembangan sistem akan berbentuk sebuah website dengan fitur utama:
 * Course gratis yang dibuat oleh sesama pengguna Komora
 
 ### Lingkungan Pengembangan
+- Frontend : PHP & Blade
+- Backend : MySQL
+- Framework : Laravel
+- Code Editor : VS Code
 
 
 ## Risiko
@@ -52,7 +56,7 @@ Pengembangan sistem akan berbentuk sebuah website dengan fitur utama:
 | 3 |  Peretasan | 1 | 5 | Low | Menjaga kredibilitas akun |
 
 ## Metodologi
-Metode yang digunakan pada pengembangan sistem Komora adalah metode agile, karena metode agile adaptif untuk para developer yang masih belum mahir pada bidangnya, sehingga pengembangan dapat selalu maju walaupun memiliki banyak perubahan yang terjadi.
+Metode yang digunakan pada pengembangan sistem Komora adalah metode prototyping, karena metode prototyping adaptif untuk para developer yang masih belum mahir pada bidangnya, sehingga pengembangan dapat selalu dilakukan walaupun memiliki banyak perubahan yang terjadi	
 
 ## Diagram UML
 ### Use Case Diagram
@@ -64,7 +68,16 @@ Metode yang digunakan pada pengembangan sistem Komora adalah metode agile, karen
 ![](diagram/Activity%20Diagram%20Komora_Tambah%20Course.drawio.png)
 ### ERD
 ![](diagram/erd.jpeg)
+
 ## Kendala Selama Pengembangan
+- Sulitnya melakukan pertemuan lengkap secara langsung karena waktu, tempat, kesehatan, dan cuaca
+- Saat melakukan meet secara online kurang efektif dikarenakan sinyal dari masing-masing anggota yang berbeda
+- Pengembangan fitur bulletin dan course tertunda, dikarenakan tim pengembang mengalami error yang belum bisa diselesaikan
+
 
 ## Related Link
 - Figma : https://www.figma.com/file/TkYtFNUkyV3pNS0XU5QT1z/MPPL-Kelompok-3-team-library?node-id=604%3A4050&t=yIbIfZkc20wmy6w3-1
+- Demo Videos : https://drive.google.com/drive/folders/1Ji67p5hkHDMCMtm-J6W9mYuFTHCYMNFB?usp=sharing
+- Test Case Sheets : https://docs.google.com/spreadsheets/d/1zZZrmGDNI6dJ61wXHmkGWdhuU7Ee8298Hbynt9Icl5w/edit?usp=sharing
+- Trello : https://trello.com/b/NOgOholy/mppl-3
+- KOMORA : https://projek-komora.000webhostapp.com/
