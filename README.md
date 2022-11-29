@@ -54,6 +54,8 @@ Pengembangan sistem akan berbentuk sebuah website dengan fitur utama:
 | 1 | Perubahan Ide | 4 | 4 | Medium | Mengubah timeline pengerjaan dan mempersiapkan waktu cadangan |
 | 2 | Source Code Terhapus | 1 | 10 | Medium | Backup source code |
 | 3 |  Peretasan | 1 | 5 | Low | Menjaga kredibilitas akun |
+| 4 | Perencanaan yang berselbihan | 10 | 8 | High | Evaluasi progress pengembangan |
+
 
 ## Metodologi
 Metode yang digunakan pada pengembangan sistem Komora adalah metode prototyping, karena metode prototyping adaptif untuk para developer yang masih belum mahir pada bidangnya, sehingga pengembangan dapat selalu dilakukan walaupun memiliki banyak perubahan yang terjadi	
