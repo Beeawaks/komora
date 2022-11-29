@@ -56,9 +56,14 @@ Metode yang digunakan pada pengembangan sistem Komora adalah metode agile, karen
 
 ## Diagram UML
 ### Use Case Diagram
+![](diagram/Copy%20of%20useCase_Komora.drawio%20(2).png)
 ### Activity Diagram
+![](diagram/Activity%20Diagram%20Komora_Tambah%20Pertanyaan.drawio.png)
+![](diagram/Activity%20Diagram%20Komora_Tambah%20Komen.drawio.png)<br/>
+![](diagram/Activity%20Diagram%20Komora_Tambah%20Bulletin.drawio.png)
+![](diagram/Activity%20Diagram%20Komora_Tambah%20Course.drawio.png)
 ### ERD
-
+![](diagram/erd.jpeg)
 ## Kendala Selama Pengembangan
 
 ## Related Link
