@@ -77,7 +77,7 @@ Metode yang digunakan pada pengembangan sistem Komora adalah metode prototyping,
 - Pengembangan fitur bulletin dan course tertunda, dikarenakan tim pengembang mengalami error yang belum bisa diselesaikan
 
 
-## Related Link
+## Related Links
 - Figma : https://www.figma.com/file/TkYtFNUkyV3pNS0XU5QT1z/MPPL-Kelompok-3-team-library?node-id=604%3A4050&t=yIbIfZkc20wmy6w3-1
 - Demo Videos : https://drive.google.com/drive/folders/1Ji67p5hkHDMCMtm-J6W9mYuFTHCYMNFB?usp=sharing
 - Test Case Sheets : https://docs.google.com/spreadsheets/d/1zZZrmGDNI6dJ61wXHmkGWdhuU7Ee8298Hbynt9Icl5w/edit?usp=sharing
