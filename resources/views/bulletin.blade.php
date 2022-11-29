@@ -1,12 +1,20 @@
-{{-- @extends('layouts.main')
-@section('container')
-<h1>Bulletin</h1>
-@endsection --}}
-
 @extends('layouts.main')
 
 @section('container')
     <h1 class="mb-5">{{ $title }}</h1>
+
+    @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ session('success') }}
+          <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    <div class="row justify-content mb-3">
+        <div class="col-md-6">
+           <a href="/bulletin/posts/create" class="btn btn-primary mb-3">Create Announcement</a>
+        </div>
+    </div>
 
     @if ($posts->count())
     <div class="container">
@@ -20,7 +28,7 @@
                         <h5 class="card-title"><a href="/bulletin/{{ $post->slug }}" class="text-decoration-none text-dark">{{ $post->title }}</a></h5>
                         <p>
                             <small class="text-muted">
-                                By. <a href="/authors/{{ $post->author->username }}"class = "text-decoration-none">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }}
+                                By. {{ $post->author->name }} {{ $post->created_at->diffForHumans() }}
                             </small>
                         </p>
                         <p class="card-text">{{ $post->excerpt }}</p>

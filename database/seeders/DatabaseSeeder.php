@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Bulletin;
 use App\Models\User;
+use App\Models\Course;
+use App\Models\Bulletin;
 use App\Models\Category;
 use App\Models\pertanyaanPost;
 use Illuminate\Database\Seeder;
@@ -21,20 +22,21 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(3)->create();
 
-        Category::create([
-            'name'=>'College',
-            'slug'=>'college'
-        ]);
+        // Category::create([
+        //     'name'=>'College',
+        //     'slug'=>'college'
+        // ]);
 
-        Category::create([
-            'name'=>'Personal',
-            'slug'=>'personal'
-        ]);
+        // Category::create([
+        //     'name'=>'Personal',
+        //     'slug'=>'personal'
+        // ]);
 
         pertanyaanPost::factory(20)->create();
 
         Bulletin::factory(10)->create();
 
+        Course::factory(5)->create();
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
