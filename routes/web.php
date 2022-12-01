@@ -96,12 +96,15 @@ Route::get('/dashboard', function()
     return view('dashboard.index');
 })->middleware('auth');
 
+
 Route::get('/pertanyaan/posts/create', [pertanyaanPostController::class, 'create']);
+Route::get('/pertanyaan/posts/{pertanyaan_posts:slug}/edit', [pertanyaanPostController::class, 'edit'])->middleware('auth');
 Route::resource('/pertanyaan/posts', pertanyaanPostController::class)->middleware('auth');
 
-
 Route::get('/course/posts/create', [CourseController::class, 'create']);
+Route::get('/course/posts/{courses:slug}/edit', [CourseController::class, 'edit'])->middleware('auth');
 Route::resource('/course/posts', CourseController::class)->middleware('auth');
 
 Route::get('/bulletin/posts/create', [BulletinController::class, 'create']);
+Route::get('/bulletin/posts/{bulletins:slug}/edit', [BulletinController::class, 'edit'])->middleware('auth');
 Route::resource('/bulletin/posts', BulletinController::class)->middleware('auth');

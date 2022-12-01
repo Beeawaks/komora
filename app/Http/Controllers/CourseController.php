@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
+use App\Models\Bulletin;
 
 class CourseController extends Controller
 {
@@ -56,5 +57,35 @@ class CourseController extends Controller
     {
         Course::destroy($course->id);
         return redirect('/course')->with('success', 'Course deleted!');
+    }
+
+    public function edit(Course $courses)
+    {
+        return view('course.posts.edit', [
+            "title" => "Edit Course",
+            "active" => "course",
+            "post" => $courses
+        ]);
+    }
+
+    public function update(Request $request, Course $courses)
+    {
+        $rules = ([
+            "title" => 'required|max:255',
+            'body' => 'required' 
+        ]);
+
+        if($request->slug != $courses->slug)
+        {
+            $rules['slug'] = 'required|unique:courses';
+        }
+
+        $validatedData=$request->validate($rules);
+
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+
+        Course::where('id', $courses->id)->update($validatedData);
+        return redirect('/course')->with('success', 'Course updated!');
     }
 }

@@ -6,7 +6,7 @@
 
 
 <div class="col-lg-8">
-    <form method="post" action="/pertanyaan/posts/{{ $post->slug }}">
+    <form method="post" action="/bulletin/posts/{{ $post->slug }}">
         @method('put')
         @csrf
         <div class="form-group">

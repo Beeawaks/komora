@@ -8,7 +8,7 @@
 
             <h1 class="mb-3"> {{ $post->title }} </h1>
 
-            <h5>By. {{ $post->author->name }}</a></h5>
+            <h5>By. {{ $post->author->name }}</h5>
 
             <a href="/pertanyaan/posts/{{ $post->slug }}/edit" class="btn btn-warning">Edit</a>
 

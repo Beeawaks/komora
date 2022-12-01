@@ -56,12 +56,33 @@ class pertanyaanPostController extends Controller
         return redirect('/home')->with('success', 'Question deleted!');
     }
 
-    public function edit(pertanyaanPost $pertanyaanPost)
+    public function edit(pertanyaanPost $pertanyaan_posts)
     {
         return view('pertanyaan.posts.edit', [
             "title" => "Edit Question",
             "active" => "home",
-            "post" => $pertanyaanPost
+            "post" => $pertanyaan_posts
         ]);
+    }
+
+    public function update(Request $request, pertanyaanPost $pertanyaan_posts)
+    {
+        $rules = ([
+            "title" => 'required|max:255',
+            'body' => 'required' 
+        ]);
+
+        if($request->slug != $pertanyaan_posts->slug)
+        {
+            $rules['slug'] = 'required|unique:pertanyaan_posts';
+        }
+
+        $validatedData=$request->validate($rules);
+
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+
+        pertanyaanPost::where('id', $pertanyaan_posts->id)->update($validatedData);
+        return redirect('/pertanyaan/posts')->with('success', 'Question updated!');
     }
 }

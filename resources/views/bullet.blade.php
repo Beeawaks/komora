@@ -7,6 +7,9 @@
         <div class="col-md-8">
 
             <h1 class="mb-3"> {{ $post->title }} </h1>
+            <h5>By. {{ $post->author->name }}</h5>
+
+            <a href="/bulletin/posts/{{ $post->slug }}/edit" class="btn btn-warning">Edit</a>
 
             <div class="row justify-content mb-3">
                 <div class="col-md-6">

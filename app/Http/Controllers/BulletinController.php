@@ -56,4 +56,34 @@ class BulletinController extends Controller
         Bulletin::destroy($bulletin->id);
         return redirect('/bulletin')->with('success', 'Announcement deleted!');
     }
+
+    public function edit(Bulletin $bulletins)
+    {
+        return view('bulletin.posts.edit', [
+            "title" => "Edit Bulletin",
+            "active" => "bulletin",
+            "post" => $bulletins
+        ]);
+    }
+
+    public function update(Request $request, Bulletin $bulletins)
+    {
+        $rules = ([
+            "title" => 'required|max:255',
+            'body' => 'required' 
+        ]);
+
+        if($request->slug != $bulletins->slug)
+        {
+            $rules['slug'] = 'required|unique:bulletins';
+        }
+
+        $validatedData=$request->validate($rules);
+
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+
+        Bulletin::where('id', $bulletins->id)->update($validatedData);
+        return redirect('/bulletin')->with('success', 'Bulletin updated!');
+    }
 }
